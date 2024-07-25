@@ -4,13 +4,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Azur Lane Reload Time Calculation</title>
+
         <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         
 
         <style>
-             .jqis{
+            .jqis{
                 position:relative;
             }
             .jqis_header{
@@ -33,95 +35,208 @@
                 cursor:pointer;
                 float:left;
             }
+
+            body {
+                color: white;
+                background-color: rgb(40, 40, 40);
+            }
+            .fleet_front_box {
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+                width: 1134px;
+                border-color: white;
+                border-width: 1px;
+            }
+            .data {
+                font-size:40px;
+
+            }
+            .ship_select_container {
+                position: initial;
+                width: 100px;
+                height: 100px;
+                box-sizing: border-box;
+            }
+            .box {
+                overflow: hidden;
+                position: relative;
+            }
+            .icon-box {
+                position: relative;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+            .ship_bg {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                z-index: 10;
+            }
+            .ship_fr {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                z-index: 11;
+            }
+            .ship_ic {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                z-index: 12;
+            }
+            .modal-content {
+                background-color: rgb(50, 50, 50);
+                border-color: white;
+                border-width: 2px;
+            }
         </style>
 
         <py-env>
             -numpy
         </py-env>
-
     </head>
 
     <body>
-        <div class="fleet_box">
-            <div class="fleet_front_box">
-                <div class="ship_container_0">
-                    
+        <div class="fleet_box container-fluid">
+            <div class="row justify-content-center ">
+                <div class="fleet_front_box mt-5 align-items-center justify-content-center">               
+                    <div class="btn-group">
+                        <button data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <div class="m-2">
+                                <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
+                            </div>
+                        </button>
+                        <button data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <div class="m-2">
+                                <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
+                            </div>
+                        </button>
+                        <button data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <div class="m-2">
+                                <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
+                            </div>
+                        </button>
+                    </div>
+                    <p class="data">abc</p>                             
                 </div>
-                <div class="ship_container_1">
-                    
-                </div>
-                <div class="ship_container_2">
-                    
+            </div>           
+        </div>
+
+        <div class="modal" id="shipselect" style="display:none">
+            <div class="modal-dialog mt-1 mw-75" id="shipselect_dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center" id="shipselectlabel">Select ship</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row justify-content-center m-auto" id="shiplist">
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/199040.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">キアサージ</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/805030.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">アルザス</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/705020.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">ソユーズ</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/bisimaiz.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">ビスマルクZwei</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/feiteliedadi.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">グローセ</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/qianwei.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">ヴァンガード</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/wuerlixi.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">フッテン</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/wuzang.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">武蔵</span>
+                                </div>
+                            </button>
+                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
+                                <div class="container-fluid p-0 box">
+                                    <div class="container-fluid icon-box">
+                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/xinzexi.png?raw=true">
+                                    </div>
+                                    <span class="ship_name">ニュージャージ</span>
+                                </div>
+                            </button>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="shipselect">
-            
-        </div>
+        <py-script></py-script>
 
-        <py-script>
-
-reloadValue = {
-    "キアサージ":151,#まだ完凸
-    "アルザス":177+1,
-    "ニュージャージ":(177+1)*1.1,#結婚済み、まだ200好感度
-    "フッテン＿旗艦":(180+1)*1.15,
-    "フッテン＿僚艦":(180+1)*1.15*1.5,
-    "ビスアルクZwei":(170+1)*1.15,
-    #"グローセ":159+1,
-    "ソユーズ1":166,#まだ完凸
-    "ソユーズ2":166*1.1
-}
-
-skill = {
-    "キアサージ":0,
-    "アルザス":0,
-    "ニュージャージ":1.1,
-    "フッテン＿旗艦":1.15,
-    "フッテン＿僚艦":1.15*1.5,
-    "ビスアルクZwei":1.15,
-    #"グローセ":0,
-    "ソユーズ1":0,
-    "ソユーズ2":1.1
-}
-
-attackTime = {
-    "試作型406mm/50三連装砲T0":24.02,#シャンパーニュ砲
-    "試製410mm三連装砲T0":24.14,#出雲砲
-    "試製381mm三連装砲T0":23.14,#モナーク砲
-    "試作型406mmSKC連装砲T0":19.42,#グローセ砲
-    "試作型305mmSKC39三連装砲T0":18.20,#オーディン砲
-    "試作型457mm連装砲MKAT0":20.65,#ジョージア砲
-    "460mm三連装砲T0":30.59,#武蔵砲
-    "406mm三連装砲MK7T0":24.22#ニュージャージ砲
-}
-
-equipment = {
-    "0":0,
-    "自動装填機構T3":38
-}
-
-love = {
-    "愛":1.06,
-    "結婚1":1.09,
-    "結婚2":1.10,
-    "結婚3":1.11,
-    "結婚4":1.12,
-}
-"""
-a = str(input("艦船："))
-b = str(input("装備："))
-c = str(input("設備："))
-d = str(input("好感度："))
-
-time = attackTime[b] * sqrt(200 / (100 + (reloadValue[a] + equipment[c]) * love[d] * skill[a]))
-
-pyscript.write(time)"""
-        </py-script>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-        <script src="/imageselect/imageselect.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"                  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://pyscript.net/alpha/pyscript.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

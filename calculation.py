@@ -49,6 +49,8 @@ love = {
     "結婚4":1.12,
 }
 
+def 
+
 a = str(input("艦船："))
 b = str(input("装備："))
 c = str(input("設備："))
