@@ -48,9 +48,36 @@
                 border-color: white;
                 border-width: 1px;
             }
+            .select_block {
+                height: 100px;
+                width: 100px;
+                box-sizing: border-box;
+                margin: 5px;
+            }
+            .select_block_skill {
+                position: relative;
+                height: 100px;
+                width: 100px;
+                border-color: white;
+                border-width: 2px;
+                box-sizing: border-box;
+                margin: 5px;
+                padding: 2px;
+            }
+            .skill_name {
+                position: absolute;
+                left: 5px;
+                top: 0px;
+                font-weight: bold;
+            }
+            .reload_value {
+                position: absolute;
+                right: 5px;
+                bottom: 0px;
+                font-weight: bold;
+            }
             .data {
                 font-size:40px;
-
             }
             .ship_select_container {
                 position: initial;
@@ -106,21 +133,27 @@
             <div class="row justify-content-center ">
                 <div class="fleet_front_box mt-5 align-items-center justify-content-center">               
                     <div class="btn-group">
-                        <button data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
-                            <div class="m-2">
-                                <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
-                            </div>
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
                         </button>
-                        <button data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
-                            <div class="m-2">
-                                <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
-                            </div>
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img src="https://github.com/rgnji/azur-lane/blob/main/ui/icon_back.png?raw=true">
                         </button>
-                        <button data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
-                            <div class="m-2">
-                                <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
-                            </div>
-                        </button>
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img src="https://github.com/rgnji/azur-lane/blob/main/ui/icon_back.png?raw=true">
+                        </button>                       
+                    </div>
+                    <div class="select_block_skill">
+                        <span class="skill_name">スキール1</span>
+                        <span class="reload_value">0%</span>
+                    </div>
+                    <div class="select_block_skill">
+                        <span class="skill_name">スキール1</span>
+                        <span class="reload_value">15%</span>
+                    </div>
+                    <div class="select_block_skill">
+                        <span class="skill_name">スキール1</span>
+                        <span class="reload_value">0%</span>
                     </div>
                     <p class="data">abc</p>                             
                 </div>
@@ -141,7 +174,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/199040.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/199040.png?raw=true">
                                     </div>
                                     <span class="ship_name">キアサージ</span>
                                 </div>
@@ -151,7 +184,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/805030.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/805030.png?raw=true">
                                     </div>
                                     <span class="ship_name">アルザス</span>
                                 </div>
@@ -161,7 +194,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/705020.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/705020.png?raw=true">
                                     </div>
                                     <span class="ship_name">ソユーズ</span>
                                 </div>
@@ -171,7 +204,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/bisimaiz.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/bisimaiz.png?raw=true">
                                     </div>
                                     <span class="ship_name">ビスマルクZwei</span>
                                 </div>
@@ -181,7 +214,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/feiteliedadi.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/feiteliedadi.png?raw=true">
                                     </div>
                                     <span class="ship_name">グローセ</span>
                                 </div>
@@ -191,7 +224,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/qianwei.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/qianwei.png?raw=true">
                                     </div>
                                     <span class="ship_name">ヴァンガード</span>
                                 </div>
@@ -201,7 +234,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/wuerlixi.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/wuerlixi.png?raw=true">
                                     </div>
                                     <span class="ship_name">フッテン</span>
                                 </div>
@@ -211,7 +244,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/wuzang.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/wuzang.png?raw=true">
                                     </div>
                                     <span class="ship_name">武蔵</span>
                                 </div>
@@ -221,7 +254,7 @@
                                     <div class="container-fluid icon-box">
                                         <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
                                         <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/xinzexi.png?raw=true">
+                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/xinzexi.png?raw=true">
                                     </div>
                                     <span class="ship_name">ニュージャージ</span>
                                 </div>
