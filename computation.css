@@ -1,0 +1,32 @@
+.fleet_box {
+    width: 1332.8px;
+    height: 344px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8.8px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-color: rgb(108,117,125);
+    border-style: solid;
+    border-width: 0.8px;
+}
+.fleet_front_box {
+    width: 694.4px;
+    height: 345.6px;
+    box-sizing: border-box;
+    margin: 0;
+    display: block;
+}
+.ship_container_0,
+.ship_container_1,
+.ship_container_2 {
+    width: 694.4px;
+    height: 115.2px;
+}
+.ship {
+    width: 91.2px;
+    height: 91.2px;
+    dropdownWidth: 474px;
+    dropdownHeight: 285.6px;
+}
