@@ -8,38 +8,14 @@
         <title>Azur Lane Reload Time Calculation</title>
 
         <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">        
 
         <style>
-            .jqis{
-                position:relative;
-            }
-            .jqis_header{
-                background-image: url('dropdown_arrow.png');
-                background-position: right center;
-                background-repeat:no-repeat;
-                cursor:pointer;
-            }
-            .jqis_header img{
-                cursor:pointer;
-            }
-            .jqis_dropdown{
-                padding: 5px;
-                position:absolute;
-                overflow-x:hidden;
-                overflow-y:scroll;
-            }
-            .jqis_dropdown img{
-                margin-right:3px;
-                cursor:pointer;
-                float:left;
-            }
-
             body {
                 color: white;
                 background-color: rgb(40, 40, 40);
             }
+            /*fleet*/
             .fleet_front_box {
                 box-sizing: border-box;
                 display: flex;
@@ -79,48 +55,44 @@
             .data {
                 font-size:40px;
             }
-            .ship_select_container {
-                position: initial;
-                width: 100px;
-                height: 100px;
-                box-sizing: border-box;
+            /*modal*/
+            .modal-content{
+                background-color: rgb(50, 50, 50);
+                border-color: white;
+                border-width: 2px;
             }
-            .box {
-                overflow: hidden;
-                position: relative;
+            .card_style{
+                width: 80px;
+                background: rgb(50, 50, 50);
+                border: rgb(50, 50, 50);
+                color: white;
+                text-align: center;
             }
-            .icon-box {
+            .item_container{
                 position: relative;
-                width: 100%;
-                margin: 0px;
-                padding: 0px;
+                height: 80px;
             }
-            .ship_bg {
-                position: relative;
+            .bg {
+                position: absolute;
                 top: 0px;
                 left: 0px;
                 width: 100%;
                 z-index: 10;
             }
-            .ship_fr {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                z-index: 11;
-            }
-            .ship_ic {
+            .fr {
                 position: absolute;
                 top: 0px;
                 left: 0px;
                 width: 100%;
                 z-index: 12;
             }
-            .modal-content {
-                background-color: rgb(50, 50, 50);
-                border-color: white;
-                border-width: 2px;
+            .icon {
+                position: relative;
+                z-index: 11;
+                object-fit: scale-down;
+                padding: 1px;
             }
+            
         </style>
 
         <py-env>
@@ -136,7 +108,7 @@
                         <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
                             <img src="https://github.com/rgnji/azur-lane/blob/main/ui/empty.png?raw=true">
                         </button>
-                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#weaponselect" type="button">
                             <img src="https://github.com/rgnji/azur-lane/blob/main/ui/icon_back.png?raw=true">
                         </button>
                         <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
@@ -153,7 +125,7 @@
                     </div>
                     <div class="select_block_skill">
                         <span class="skill_name">スキール1</span>
-                        <span class="reload_value">0%</span>
+                        <span class="reload_value">10%</span>
                     </div>
                     <p class="data">abc</p>                             
                 </div>
@@ -161,106 +133,154 @@
         </div>
 
         <div class="modal" id="shipselect" style="display:none">
-            <div class="modal-dialog mt-1 mw-75" id="shipselect_dialog">
+            <div class="modal-dialog modal-lg mt-1 mw-75" id="shipselect_dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title text-center" id="shipselectlabel">Select ship</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="row justify-content-center m-auto" id="shiplist">
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/199040.png?raw=true">
+                        <div class="container-fluid">
+                            <div class="row m-auto row-cols-auto">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/199040.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">キアサージ</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">キアサージ</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/805030.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/805030.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">アルザス</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">アルザス</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/705020.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/705020.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ソユーズ</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">ソユーズ</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/bisimaiz.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/bisimaiz.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ビスマルクZwei</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">ビスマルクZwei</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/feiteliedadi.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/feiteliedadi.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">グローセ</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">グローセ</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/qianwei.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/qianwei.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ヴァンガード</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">ヴァンガード</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/wuerlixi.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/wuerlixi.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">フッテン</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">フッテン</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/wuzang.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/wuzang.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">武蔵</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">武蔵</span>
                                 </div>
-                            </button>
-                            <button class="p-1 mb-5 ship_select_container" data-bs-dismiss="modal">
-                                <div class="container-fluid p-0 box">
-                                    <div class="container-fluid icon-box">
-                                        <img class="ship_bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
-                                        <img class="ship_fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
-                                        <img class="ship_ic" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/xinzexi.png?raw=true">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/ship_senkan/UR/xinzexi.png?raw=true">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ニュージャージ</p>
+                                        </div>
                                     </div>
-                                    <span class="ship_name">ニュージャージ</span>
                                 </div>
-                            </button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="weaponselect" style="display:none">
+            <div class="modal-dialog mt-1 mw-75" id="weaponselect_dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center" id="weaponselectlabel">Select weapon</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center m-auto row-cols-auto">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container">
+                                            <img class="bg" src="https://github.com/rgnji/azur-lane/blob/main/ui/bg5.png?raw=true">
+                                            <img class="fr" src="https://github.com/rgnji/azur-lane/blob/main/ui/frame_5.png?raw=true">
+                                            <img class="icon" src="https://github.com/rgnji/azur-lane/blob/main/equips/large/14400.png?raw=true">
+                                        </button> 
+                                        <div class="card-body p-1">
+                                            <p class="card-text">406mm三連装砲MK7T0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
