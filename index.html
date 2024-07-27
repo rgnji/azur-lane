@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Azur Lane Reload Time Calculation</title>
+
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">        
+
+        <style>
+            body {
+                color: white;
+                background-color: rgb(40, 40, 40);
+            }
+            /*fleet*/
+            .bordershow{/*border*/
+                border-color: white;
+                border-width: 2px;
+            }
+            .row_box{/*row*/
+                margin: 0px;
+                padding: 0px;
+            }
+            .fleet_box {/*column*/
+                display: flex;
+                padding: 0px;
+            }
+            .select_block {/*button*/
+                height: 84.8px;
+                width: 84.8px;
+                margin: 2px;
+            }
+            .select_block_skill {/*div*/
+                position: relative;
+                height: 84.8px;
+                width: 84.8px;
+                border-color: white;
+                border-width: 2px;
+                box-sizing: border-box;
+                margin: 2px;
+                padding: 2px;
+            }
+            .skill_name {
+                position: absolute;
+                left: 5px;
+                top: 0px;
+                font-weight: bold;
+            }
+            .reload_value {
+                position: absolute;
+                right: 5px;
+                bottom: 0px;
+                font-weight: bold;
+            }
+            .data {
+                font-size:40px;
+            }
+            /*modal*/
+            .modal-dialog{
+                max-width: 65%;
+            }
+            .modal-content{
+                background-color: rgb(50, 50, 50);
+                border-color: white;
+                border-width: 2px;
+            }
+            .card_style{
+                width: 84.8px;
+                background: rgb(50, 50, 50);
+                border: rgb(50, 50, 50);
+                color: white;
+                text-align: center;
+            }
+            .item_container{
+                position: relative;
+                height: 84.8px;
+            }
+            .bg {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                z-index: 10;
+            }
+            .fr {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                z-index: 12;
+            }
+            .icon {
+                position: relative;
+                z-index: 11;
+                object-fit: scale-down;
+                padding: 1px;
+            }
+            
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container-fluid d-flex justify-content-center mt-5">
+            <div class="p-2 bordershow">
+                <div class="row row_box">  
+                    <div class="col-md-auto fleet_box">               
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/empty.png">
+                        </button>
+                    </div>
+                    <div class="col-md-auto fleet_box">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#weaponselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/icon_back.png">
+                        </button>
+                    </div>
+                    <div class="col-md-auto fleet_box">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/icon_back.png">
+                        </button>
+                    </div>    
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール1</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div>                           
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール2</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div>    
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール3</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row row_box">  
+                    <div class="col-md-auto fleet_box">               
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/empty.png">
+                        </button>
+                    </div>
+                    <div class="col-md-auto fleet_box">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#weaponselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/icon_back.png">
+                        </button>
+                    </div>
+                    <div class="col-md-auto fleet_box">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/icon_back.png">
+                        </button>
+                    </div>    
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール1</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div>                           
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール2</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div>    
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール3</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row row_box">  
+                    <div class="col-md-auto fleet_box">               
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/empty.png">
+                        </button>
+                    </div>
+                    <div class="col-md-auto fleet_box">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#weaponselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/icon_back.png">
+                        </button>
+                    </div>
+                    <div class="col-md-auto fleet_box">
+                        <button class="select_block" data-bs-toggle="modal" data-bs-target="#shipselect" type="button">
+                            <img class="bg" src="">
+                            <img class="fr" src="">
+                            <img class="icon" src="ui/icon_back.png">
+                        </button>
+                    </div>    
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール1</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div>                           
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール2</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div>    
+                    <div class="col-md-auto fleet_box">
+                        <div class="select_block_skill">
+                            <span class="skill_name">スキール3</span>
+                            <span class="reload_value"></span>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+                      
+        </div>
+
+        <div class="modal" id="shipselect" style="display:none">
+            <div class="modal-dialog modal-xl mt-1 mw-75" id="shipselect_dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center" id="shipselectlabel">Select ship</h4>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row m-auto justify-content-center">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/199040.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">キアサージ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/805030.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">アルザス</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/705020.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ソユーズ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/bisimaiz.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ビスマルクZwei</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/feiteliedadi.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">グローセ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/qianwei.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ヴァンガード</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/wuerlixi.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">フッテン</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/wuzang.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">武蔵</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="ship_senkan/UR/xinzexi.png">
+                                        </button>
+                                        <div class="card-body p-1">
+                                            <p class="card-text">ニュージャージ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="weaponselect" style="display:none">
+            <div class="modal-dialog modal-xl mt-1 mw-75" id="weaponselect_dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center" id="weaponselectlabel">Select weapon</h4>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row justify-content-center m-auto row-cols-auto">
+                                <div class="col-md-auto px-1">
+                                    <div class="card card_style">
+                                        <button class="item_container" data-bs-dismiss="modal">
+                                            <img class="bg" src="ui/bg5.png">
+                                            <img class="fr" src="ui/frame_5.png">
+                                            <img class="icon" src="equips/large/14400.png">
+                                        </button> 
+                                        <div class="card-body p-1">
+                                            <p class="card-text">406mm三連装砲MK7T0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://pyscript.net/alpha/pyscript.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+    </body>
+</html>
