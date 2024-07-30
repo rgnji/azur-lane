@@ -287,115 +287,13 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div class="row m-auto justify-content-center">
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/199040.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">キアサージ</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/805030.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">アルザス</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/705020.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">ソユーズ</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/bisimaiz.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">ビスマルクZwei</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/feiteliedadi.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">グローセ</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/qianwei.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">ヴァンガード</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/wuerlixi.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">フッテン</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/wuzang.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">武蔵</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="ship_senkan/UR/xinzexi.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">ニュージャージ</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="row m-auto justify-content-center" id="ship_select">
+                <ship-select
+                  v-for="ship in shiplist"
+                  :name="ship.name"
+                  :bg="ship.bg"
+                  :fr="ship.fr"
+                  :icon="ship.icon"></ship-select>
               </div>
             </div>
           </div>
@@ -418,19 +316,15 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div class="row justify-content-center m-auto row-cols-auto">
-                <div class="col-md-auto px-1">
-                  <div class="card card_style">
-                    <button class="item_container" data-bs-dismiss="modal">
-                      <img class="bg" src="ui/bg5.png" />
-                      <img class="fr" src="ui/frame_5.png" />
-                      <img class="icon" src="equips/large/14400.png" />
-                    </button>
-                    <div class="card-body p-1">
-                      <p class="card-text">406mm三連装砲MK7T0</p>
-                    </div>
-                  </div>
-                </div>
+              <div
+                class="row justify-content-center m-auto row-cols-auto"
+                id="weapon_select">
+                <weapon-select
+                  v-for="weapon in weaponlist"
+                  :name="weapon.name"
+                  :bg="weapon.bg"
+                  :fr="weapon.fr"
+                  :icon="weapon.icon"></weapon-select>
               </div>
             </div>
           </div>
@@ -438,6 +332,7 @@
       </div>
     </div>
 
+    <script src="./main.js" type="module"></script>
     <script src="https://pyscript.net/alpha/pyscript.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.js"
