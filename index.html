@@ -294,7 +294,8 @@
                   :bg="ship.bg"
                   :fr="ship.fr"
                   :icon="ship.icon"
-                  :key_ship="key"></ship-select>
+                  :key="key"
+                  @click="return_ship_key(key)"></ship-select>
               </div>
             </div>
           </div>

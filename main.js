@@ -15,6 +15,7 @@ const empty_weapon = {
 
 const app = {
   fleet_location: "",
+  ship_key: "",
   order: ["#shipselect", "#weaponselect", "#weaponselect"],
   img_ship: {
     bg: "",
@@ -25,9 +26,9 @@ const app = {
   change_img(index) {
     //item = ship keys
     const target = document.getElementById(this.fleet_location);
-    target.children[0].attributes("src") = shiplist[index].bg;
-    target.children[1].attributes("src") = shiplist[index].fr;
-    target.children[2].attributes("src") = shiplist[index].icon;
+    target.children[0].setAttribute("src", shiplist[index].bg);
+    target.children[1].setAttribute("src", shiplist[index].fr);
+    target.children[2].setAttribute("src", shiplist[index].icon);
   },
   getId(item, ship) {
     // item = col, ship = row
@@ -36,7 +37,6 @@ const app = {
   },
   setId(id) {
     this.fleet_location = id;
-    return;
   },
 };
 
@@ -98,18 +98,22 @@ const select_ship = Vue.createApp({
       shiplist: shiplist,
     };
   },
+  methods: {
+    return_ship_key(key) {
+      app.ship_key = key;
+      // console.log(app.ship_key);
+    },
+  },
 });
 
 select_ship.component("ship-select", {
-  props: ["name", "bg", "fr", "icon", "key_ship"],
+  props: ["name", "bg", "fr", "icon", "ship_key"],
   template: `
             <div class="col-md-auto px-1">
               <div class="card card_style">
                 <button 
                 class="item_container" 
-                
-                data-bs-dismiss="modal" 
-                onclick="app.change_img(key_ship);">
+                data-bs-dismiss="modal">
                   <img class="bg" :src="bg" />
                   <img class="fr" :src="fr" />
                   <img class="icon" :src="icon" />
@@ -119,11 +123,6 @@ select_ship.component("ship-select", {
                 </div>
               </div>
             </div>`,
-  methods: {
-    change_img(){
-
-    }
-  }
 });
 
 select_ship.mount("#ship_select");
