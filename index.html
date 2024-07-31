@@ -289,11 +289,12 @@
             <div class="container-fluid">
               <div class="row m-auto justify-content-center" id="ship_select">
                 <ship-select
-                  v-for="ship in shiplist"
+                  v-for="(ship, key) in shiplist"
                   :name="ship.name"
                   :bg="ship.bg"
                   :fr="ship.fr"
-                  :icon="ship.icon"></ship-select>
+                  :icon="ship.icon"
+                  :key_ship="key"></ship-select>
               </div>
             </div>
           </div>
