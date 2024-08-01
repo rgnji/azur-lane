@@ -1,18 +1,25 @@
+/* type: 1=>駆逐, 2=>軽巡, 3=>重巡, 4=>超巡, 5=>巡洋戦艦, 6=>戦艦, 7=>軽母, 8=>空母, 9=>航戦 */
+/* equip: 1=> */
 export const shiplist = {
   キアサージ: {
     name: "キアサージ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/199040.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
+    equip: {
+      main: ["large"],
+      sub: ["medium", "small"],
+      aux: ["back", "all"],
+    },
   },
   アルザス: {
     name: "アルザス",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/805030.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   ソユーズ: {
@@ -20,7 +27,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/705020.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   ビスマルクZwei: {
@@ -28,7 +35,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/bisimaiz.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   グローセ: {
@@ -36,7 +43,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/feiteliedadi.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   ヴァンガード: {
@@ -44,7 +51,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/qianwei.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   フッテン: {
@@ -52,7 +59,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/wuerlixi.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   武蔵: {
@@ -60,7 +67,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/wuzang.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
   ニュージャージ: {
@@ -68,7 +75,7 @@ export const shiplist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/xinzexi.png",
-    type: "senkan",
+    type: "6",
     rarity: "UR",
   },
 };

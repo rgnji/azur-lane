@@ -17,6 +17,18 @@ const app = {
   fleet_location: "",
   ship_key: "",
   order: ["#shipselect", "#weaponselect", "#weaponselect"],
+  skills: ["skill1", "skill2", "skill3"],
+  btn_type: {
+    ship: {
+      modal_type: "#shipselect",
+    },
+    weapon: {
+      modal_type: "#weaponselect",
+    },
+    equipment: {
+      modal_type: "#equipselect",
+    },
+  },
   img_ship: {
     bg: "",
     fr: "",
@@ -40,57 +52,63 @@ const app = {
   },
 };
 
-const item_container = Vue.createApp({});
+const fleet_container = Vue.createApp({});
 
-item_container.component("item-container", {
-  props: ["modal_type", "bg", "fr", "icon", "item", "ship"],
+fleet_container.component("item-container", {
+  props: ["modal_type", "ship"],
   template: `
             <div class="col-md-auto fleet_box">
               <button
                 class="select_block"
                 type="button"
-                id="app.getId(item, ship)"
                 data-bs-toggle="modal"
-                :data-bs-target="modal_type"
-                onclick="setId(this.id)">
-                <img class="bg" :src="bg" />
-                <img class="fr" :src="fr" />
-                <img class="icon" :src="icon" />
+                :data-bs-target="modal_type">
+                <img class="bg" :src="shiplist[back][ship].bg" />
+                <img class="fr" :src="shiplist[back][ship]fr" />
+                <img class="icon" :src="shiplist[back][ship]icon" />
               </button>
             </div>`,
 });
 
-const ship_container = Vue.createApp({});
+fleet_container.component("word-container", {
+  props: ["skill"],
+  template: `
+            <div class="col-md-auto fleet_box">
+            <div class="select_block_skill">
+              <span class="skill_name">{{skill}}</span>
+              <span class="reload_value"></span>
+            </div>
+          </div>`,
+});
 
-ship_container.component("ship-container", {
+fleet_container.component("ship-container", {
   props: ["number"],
   template: `
             <div class="row row_box">
               <item-container
-              v-for="(order, index) in app.order"
-              :modal_type="order"
-              :ship="number"
-              :item="index.toString()"></item-container>
+              :modal_type="#shipselect"></item-container>
+              <item-container
+              v-for="index in 5"
+              :key="index"
+              :modal_type="#weaponselect"></item-container>
+              <word-container
+              v-for="skill in app.skills"
+              :skill="skill"></word-container>
             </div>`,
 });
-
-const fleet_container = Vue.createApp({});
 
 fleet_container.component("fleet-container", {
   template: `
             <div class="container-fluid d-flex justify-content-center mt-5">
               <div class="p-2 bordershow">
                 <ship-container
-                v-for="order in orders"
-                :number="order"></ship-container>
+                v-for="index in 3"
+                :key="index"></ship-container>
               </div>
             </div>`,
-  data() {
-    return {
-      orders: [0, 1, 2],
-    };
-  },
 });
+
+fleet_container.mount("#fleet-board");
 /*------------------------------------------------*/
 const select_ship = Vue.createApp({
   data() {
@@ -101,7 +119,8 @@ const select_ship = Vue.createApp({
   methods: {
     return_ship_key(key) {
       app.ship_key = key;
-      // console.log(app.ship_key);
+      app.change_img;
+      console.log(key);
     },
   },
 });
