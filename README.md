@@ -1,1 +1,1 @@
-01230123
+weapon not removed when ship removed

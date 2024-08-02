@@ -1,8 +1,14 @@
 /* type: 1=>駆逐, 2=>軽巡, 3=>重巡, 4=>超巡, 5=>巡洋戦艦, 6=>戦艦, 7=>軽母, 8=>空母, 9=>航戦 */
 /* equip: 1=> */
 export const shiplist = {
+  remove: {
+    text: "remove",
+    bg: "",
+    fr: "",
+    icon: "ui/empty.png",
+  },
   キアサージ: {
-    name: "キアサージ",
+    text: "キアサージ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/199040.png",
@@ -15,7 +21,7 @@ export const shiplist = {
     },
   },
   アルザス: {
-    name: "アルザス",
+    text: "アルザス",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/805030.png",
@@ -23,7 +29,7 @@ export const shiplist = {
     rarity: "UR",
   },
   ソユーズ: {
-    name: "ソユーズス",
+    text: "ソユーズ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/705020.png",
@@ -31,7 +37,7 @@ export const shiplist = {
     rarity: "UR",
   },
   ビスマルクZwei: {
-    name: "ビスマルクZwei",
+    text: "ビスマルクZwei",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/bisimaiz.png",
@@ -39,7 +45,7 @@ export const shiplist = {
     rarity: "UR",
   },
   グローセ: {
-    name: "グローセ",
+    text: "グローセ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/feiteliedadi.png",
@@ -47,7 +53,7 @@ export const shiplist = {
     rarity: "UR",
   },
   ヴァンガード: {
-    name: "ヴァンガード",
+    text: "ヴァンガード",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/qianwei.png",
@@ -55,7 +61,7 @@ export const shiplist = {
     rarity: "UR",
   },
   フッテン: {
-    name: "フッテン",
+    text: "フッテン",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/wuerlixi.png",
@@ -63,7 +69,7 @@ export const shiplist = {
     rarity: "UR",
   },
   武蔵: {
-    name: "武蔵",
+    text: "武蔵",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/wuzang.png",
@@ -71,7 +77,7 @@ export const shiplist = {
     rarity: "UR",
   },
   ニュージャージ: {
-    name: "ニュージャージ",
+    text: "ニュージャージ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/xinzexi.png",

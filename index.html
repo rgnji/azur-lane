@@ -35,6 +35,7 @@
       }
       .select_block {
         /*button*/
+        position: relative;
         height: 84.8px;
         width: 84.8px;
         margin: 2px;
@@ -130,12 +131,11 @@
               <div class="row m-auto justify-content-center" id="ship_select">
                 <ship-select
                   v-for="(ship, key) in shiplist"
-                  :name="ship.name"
-                  :bg="ship.bg"
-                  :fr="ship.fr"
-                  :icon="ship.icon"
-                  :key="key"
-                  @click="return_ship_key(key)"></ship-select>
+                  :ship-id="ship.text"
+                  :ship-bg="ship.bg"
+                  :ship-frame="ship.fr"
+                  :ship-icon="ship.icon"
+                  :key="key"></ship-select>
               </div>
             </div>
           </div>
@@ -162,11 +162,12 @@
                 class="row justify-content-center m-auto row-cols-auto"
                 id="weapon_select">
                 <weapon-select
-                  v-for="weapon in weaponlist"
-                  :name="weapon.name"
-                  :bg="weapon.bg"
-                  :fr="weapon.fr"
-                  :icon="weapon.icon"></weapon-select>
+                  v-for="(weapon, key) in weaponlist"
+                  :weapon-id="weapon.text"
+                  :weapon-bg="weapon.bg"
+                  :weapon-frame="weapon.fr"
+                  :weapon-icon="weapon.icon"
+                  :key="key"></weapon-select>
               </div>
             </div>
           </div>
