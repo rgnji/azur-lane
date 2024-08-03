@@ -175,8 +175,8 @@ select_ship.component("ship-select", {
                   <img class="fr" :src="shipFrame" />
                   <img class="icon" :src="shipIcon" />
                 </button>
-                <div class="card-body p-1">
-                  <p class="card-text">{{shipId}}</p>
+                <div class="card-body p-0">
+                  <p class="card-text card_txt">{{shipId}}</p>
                 </div>
               </div>
             </div>`,
@@ -211,8 +211,8 @@ select_weapon.component("weapon-select", {
                   <img class="fr" :src="weaponFrame" />
                   <img class="icon" :src="weaponIcon" />
                 </button>
-                <div class="card-body p-1">
-                  <p class="card-text">{{weaponId}}</p>
+                <div class="card-body p-0">
+                  <p class="card-text card_txt">{{weaponId}}</p>
                 </div>
               </div>
             </div>`,
