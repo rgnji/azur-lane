@@ -25,7 +25,12 @@ export const store = Vue.reactive({
     let row, col;
     [row, col] = this.weaponPos;
     this.targetWeapon[row][col] = weapon;
-    console.log(row, col);
+    // console.log(row, col);
+  },
+
+  resetWeapon(row, col) {
+    this.targetWeapon[row][col - 1] = "remove";
+    // console.log("weapon reset", this.targetWeapon[row][col - 1]);
   },
 
   getter(row) {
@@ -35,11 +40,5 @@ export const store = Vue.reactive({
   getterWeapon(row, col) {
     // return weapon name
     return this.targetWeapon[row][col - 1];
-  },
-
-  resetWeapon(row) {
-    for (let key in 3) {
-      this.targetWeapon[row][key] = "empty";
-    }
   },
 });

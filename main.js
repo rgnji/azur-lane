@@ -5,18 +5,18 @@ import { store } from "./store.js";
 const fleet_container = Vue.createApp({});
 
 fleet_container.component("item-container", {
-  props: ["col-id"],
+  props: ["colId"],
   template: `
-            <div class="col-md-auto fleet_box">
+            <div class="col-md-auto fleet_box" :id="colId">
               <button
                 class="select_block"
                 type="button"
                 :data-bs-toggle="weaponOnOff()"
                 :data-bs-target="deterModal()"
                 @click="takePosition()">
-                <img class="bg" :src="target().bg" />
-                <img class="fr" :src="target().fr" />
-                <img class="icon" :src="target().icon" />
+                <img class="bg" :src="target(0)" />
+                <img class="fr" :src="target(1)" />
+                <img class="icon" :src="target(2)" />
               </button>
             </div>`,
   data() {
@@ -27,24 +27,34 @@ fleet_container.component("item-container", {
     };
   },
   methods: {
-    target() {
-      // switch the img to which clicked in modal
+    target(val) {
+      // render button image
       if (this.col === 0) {
         // it's a ship column
         let name = store.getter(this.row);
-        return {
-          bg: shiplist[name].bg,
-          fr: shiplist[name].fr,
-          icon: shiplist[name].icon,
-        };
+        switch (val) {
+          case 0:
+            return shiplist[name].bg;
+          case 1:
+            return shiplist[name].fr;
+          case 2:
+            return shiplist[name].icon;
+          default:
+            break;
+        }
       } else {
         // it's a weapon
         let name = store.getterWeapon(this.row, this.col);
-        return {
-          bg: weaponlist[name].bg,
-          fr: weaponlist[name].fr,
-          icon: weaponlist[name].icon,
-        };
+        switch (val) {
+          case 0:
+            return weaponlist[name].bg;
+          case 1:
+            return weaponlist[name].fr;
+          case 2:
+            return weaponlist[name].icon;
+          default:
+            break;
+        }
       }
     },
     takePosition() {
@@ -67,9 +77,10 @@ fleet_container.component("item-container", {
     },
     weaponOnOff() {
       if (store.getter(this.row) === "remove" && this.col !== 0) {
-        return ""; // disable
+        store.resetWeapon(this.row, this.col); // remove weapon
+        return ""; // disable modal toggle
       } else {
-        return "modal"; // enable
+        return "modal"; // enable modal toggle
       }
     },
   },
@@ -142,7 +153,7 @@ const select_ship = Vue.createApp({
 });
 
 select_ship.component("ship-select", {
-  props: ["ship-bg", "ship-frame", "ship-icon", "ship-id"],
+  props: ["shipBg", "shipFrame", "shipIcon", "shipId"],
   template: `
             <div class="col-md-auto px-1">
               <div class="card card_style">
@@ -178,7 +189,7 @@ const select_weapon = Vue.createApp({
 });
 
 select_weapon.component("weapon-select", {
-  props: ["weapon-bg", "weapon-frame", "weapon-icon", "weapon-id"],
+  props: ["weaponBg", "weaponFrame", "weaponIcon", "weaponId"],
   template: `
             <div class="col-md-auto px-1">
               <div class="card card_style">
