@@ -134,10 +134,19 @@ fleet_container.component("fleet-container", {
                 :key="index"
                 :row-id="idCompose(index - 1)"></ship-container>
               </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button 
+              type="button" 
+              class="btn btn-danger empty_btn"
+              @click="resetFleet()">EMPTY FLEET</button>
             </div>`,
   methods: {
     idCompose(index) {
       return index.toString();
+    },
+    resetFleet() {
+      store.resetFleet();
     },
   },
 });

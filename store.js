@@ -25,12 +25,27 @@ export const store = Vue.reactive({
     let row, col;
     [row, col] = this.weaponPos;
     this.targetWeapon[row][col] = weapon;
-    // console.log(row, col);
   },
 
+  // remove weapon when ship removed
   resetWeapon(row, col) {
     this.targetWeapon[row][col - 1] = "remove";
-    // console.log("weapon reset", this.targetWeapon[row][col - 1]);
+  },
+
+  // empty fleet button
+  resetFleet() {
+    for (let ship = 0; ship < this.targetShip.length; ship++) {
+      this.targetShip[ship] = "remove";
+    }
+    for (let weaponRow = 0; weaponRow < this.targetWeapon.length; weaponRow++) {
+      for (
+        let weaponCol = 0;
+        weaponCol < this.targetWeapon[weaponRow].length;
+        weaponCol++
+      ) {
+        this.targetWeapon[weaponRow][weaponCol] = "remove";
+      }
+    }
   },
 
   getter(row) {
