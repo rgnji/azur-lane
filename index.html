@@ -7,19 +7,18 @@
 
     <title>Azur Lane Reload Time Calculation</title>
 
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 
     <style>
       body {
-        color: white;
         background-color: rgb(40, 40, 40);
+        color: white;
       }
-      /*fleet*/
       .bordershow {
         /*border*/
+        border-style: solid;
         border-color: white;
         border-width: 2px;
       }
@@ -30,54 +29,49 @@
       }
       .fleet_box {
         /*column*/
-        display: flex;
-        padding: 0px;
+        padding: 0;
+        margin: 2px;
+        height: 5.8rem;
+        width: 5.8rem;
       }
       .select_block {
         /*button*/
         position: relative;
-        height: 84.8px;
-        width: 84.8px;
-        margin: 2px;
+        border-width: 0;
+        padding: 0;
+        background-color: rgb(40, 40, 40);
         transition: 0.2s;
+        height: 5.8rem;
       }
       .select_block:hover {
         transform: scale(1.2);
         background-color: black;
         box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
-        opacity: 0.8;
         z-index: 13;
       }
       .bg {
         position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
+        height: 5.8rem;
         z-index: 10;
       }
       .fr {
         position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
+        height: 5.8rem;
         z-index: 12;
       }
       .icon {
-        position: relative;
-        z-index: 11;
-        object-fit: scale-down;
         padding: 1px;
+        position: relative;
+        width: 5.8rem;
+        z-index: 11;
       }
       .select_block_skill {
-        /*div*/
         position: relative;
-        height: 84.8px;
-        width: 84.8px;
         border-color: white;
+        border-style: solid;
         border-width: 2px;
-        box-sizing: border-box;
-        margin: 2px;
-        padding: 2px;
+        height: 5.8rem;
+        width: 5.8rem;
       }
       .skill_name {
         position: absolute;
@@ -91,15 +85,12 @@
         bottom: 0px;
         font-weight: bold;
       }
-      .data {
-        font-size: 40px;
-      }
       .empty_btn {
         width: 250px;
         height: 60px;
         margin: 10px;
       }
-      /*modal*/
+      /* modal */
       .modal-dialog {
         max-width: 65%;
       }
@@ -108,28 +99,19 @@
         border-color: white;
         border-width: 2px;
       }
-      .card_style {
-        width: 84.8px;
-        background: rgb(50, 50, 50);
-        border: rgb(50, 50, 50);
-        border-radius: 0;
-        color: white;
-        text-align: center;
-        overflow: hidden;
+      .item_container {
+        background-color: rgb(40, 40, 40);
+        border-width: 0;
+        position: relative;
+        padding: 0;
         transition: 0.2s;
+        height: 5.8rem;
       }
-      .card_style:hover {
+      .item_container:hover {
         transform: scale(1.2);
         background-color: black;
         box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
         z-index: 13;
-      }
-      .item_container {
-        position: relative;
-        height: 84.8px;
-      }
-      .card_txt {
-        white-space: nowrap;
       }
     </style>
   </head>
@@ -183,9 +165,7 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div
-                class="row justify-content-center m-auto row-cols-auto"
-                id="weapon_select">
+              <div class="row justify-content-center m-auto" id="weapon_select">
                 <weapon-select
                   v-for="(weapon, key) in weaponlist"
                   :weapon-id="weapon.text"
@@ -201,12 +181,19 @@
     </div>
 
     <script src="./main.js" type="module"></script>
-    <script src="https://pyscript.net/alpha/pyscript.js"></script>
     <script
-      src="https://code.jquery.com/jquery-3.7.1.js"
-      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue@latest"></script>
+
+    <script type="module">
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@ fleet_container.component("item-container", {
   template: `
             <div class="col-md-auto fleet_box" :id="colId">
               <button
-                class="select_block"
+                class="select_block d-flex flex-wrap align-content-center"
                 type="button"
                 :data-bs-toggle="weaponOnOff()"
                 :data-bs-target="deterModal()"
@@ -23,7 +23,6 @@ fleet_container.component("item-container", {
     return {
       row: parseInt(this.colId.split("_")[0]),
       col: parseInt(this.colId.split("_")[1]),
-      lock: "",
     };
   },
   methods: {
@@ -164,21 +163,19 @@ const select_ship = Vue.createApp({
 select_ship.component("ship-select", {
   props: ["shipBg", "shipFrame", "shipIcon", "shipId"],
   template: `
-            <div class="col-md-auto px-1">
-              <div class="card card_style">
-                <button 
-                class="item_container" 
-                :id="shipId"
-                data-bs-dismiss="modal"
-                @click="choose()">
-                  <img class="bg" :src="shipBg" />
-                  <img class="fr" :src="shipFrame" />
-                  <img class="icon" :src="shipIcon" />
-                </button>
-                <div class="card-body p-0">
-                  <p class="card-text card_txt">{{shipId}}</p>
-                </div>
-              </div>
+            <div class="col-md-auto p-0 m-1">              
+              <button 
+              class="item_container d-flex align-content-center flex-wrap" 
+              :id="shipId"
+              data-bs-dismiss="modal"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              :title="shipId"
+              @click="choose()">
+                <img class="bg" :src="shipBg" />
+                <img class="fr" :src="shipFrame" />
+                <img class="icon" :src="shipIcon" />
+              </button>                  
             </div>`,
   methods: {
     choose() {
@@ -200,21 +197,19 @@ const select_weapon = Vue.createApp({
 select_weapon.component("weapon-select", {
   props: ["weaponBg", "weaponFrame", "weaponIcon", "weaponId"],
   template: `
-            <div class="col-md-auto px-1">
-              <div class="card card_style">
-                <button 
-                class="item_container" 
-                :id="weaponId"
-                data-bs-dismiss="modal"
-                @click="choose()">
-                  <img class="bg" :src="weaponBg" />
-                  <img class="fr" :src="weaponFrame" />
-                  <img class="icon" :src="weaponIcon" />
-                </button>
-                <div class="card-body p-0">
-                  <p class="card-text card_txt">{{weaponId}}</p>
-                </div>
-              </div>
+            <div class="col-md-auto p-0 m-1">
+              <button 
+              class="item_container d-flex align-content-center flex-wrap" 
+              :id="weaponId"
+              data-bs-dismiss="modal"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              :title="weaponId"
+              @click="choose()">
+                <img class="bg" :src="weaponBg" />
+                <img class="fr" :src="weaponFrame" />
+                <img class="icon" :src="weaponIcon" />
+              </button>
             </div>`,
   methods: {
     choose() {

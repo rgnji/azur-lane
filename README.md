@@ -1,2 +1,1 @@
-hover to extend the whole text at card body and center it
-button -> hover; tooltip -> full name
+tooltip without arrow || div hover (need justify center, white-space: nowrap)
