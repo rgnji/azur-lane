@@ -31,6 +31,14 @@ export const weaponlist = {
     type: "large",
     rarity: "UR",
   },
+  "試作型410mm連装砲mod.A": {
+    text: "試作型410mm連装砲mod.A",
+    bg: "ui/bg4.png",
+    fr: "ui/frame_4.png",
+    icon: "equips/large/34320.png",
+    type: "large",
+    rarity: "SSR",
+  },
   試製410mm三連装砲T0: {
     text: "試製410mm三連装砲T0",
     bg: "ui/bg4.png",
