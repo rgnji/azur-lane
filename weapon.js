@@ -1,5 +1,5 @@
-/* type: large, medium, small, air, front, back, all*/
-/* large, fight, bomb, torpedo, equip*/
+/* ship type: 1=>駆逐, 2=>軽巡, 3=>重巡, 4=>超巡, 5=>巡洋戦艦, 6=>戦艦, 7=>軽母, 8=>空母, 9=>航戦 */
+/* equip type: 1->small, 2->medium, 3->large, 4->torpedo, 5->air, 6->fight, 7->bomb, 8->attack */
 export const weaponlist = {
   remove: {
     text: "remove",
@@ -13,7 +13,7 @@ export const weaponlist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "equips/large/14400.png",
-    type: "large",
+    type: 3,
     rarity: "UR",
   },
   試作型457mm連装砲MKAT0: {
@@ -21,7 +21,7 @@ export const weaponlist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "equips/large/14500.png",
-    type: "large",
+    type: 3,
     rarity: "UR",
   },
   "460mm三連装砲T0": {
@@ -29,7 +29,7 @@ export const weaponlist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "equips/large/34200.png",
-    type: "large",
+    type: 3,
     rarity: "UR",
   },
   "試作型艦上式La-9T0": {
@@ -37,7 +37,7 @@ export const weaponlist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "equips/fight/85600.png",
-    type: "fight",
+    type: 6,
     rarity: "UR",
   },
   "AD-1スカイレーダー": {
@@ -45,7 +45,7 @@ export const weaponlist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "equips/bomb/19300.png",
-    type: "bomb",
+    type: 7,
     rarity: "UR",
   },
   "試作型天雷(特別計画艦仕様)T0": {
@@ -53,23 +53,23 @@ export const weaponlist = {
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "equips/bomb/39340.png",
-    type: "bomb",
+    type: 7,
     rarity: "UR",
   },
   ワイヴァーンT0: {
     text: "ワイヴァーンT0",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
-    icon: "equips/torpedo/28400.png",
-    type: "torpedo",
+    icon: "equips/attack/28400.png",
+    type: 8,
     rarity: "UR",
   },
   試作型スピアフィッシュ: {
     text: "試作型スピアフィッシュ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
-    icon: "equips/torpedo/28420.png",
-    type: "torpedo",
+    icon: "equips/attack/28420.png",
+    type: 8,
     rarity: "UR",
   },
   /*SSR---------------------------------------------------------*/
@@ -78,7 +78,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/14360.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型406mm三連装砲Mk6改T0: {
@@ -86,7 +86,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/14540.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型406mm連装砲Mk4T0: {
@@ -94,7 +94,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/14520.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "356mm四連装砲T3": {
@@ -102,7 +102,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/24000.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試製381mm三連装砲T0: {
@@ -110,7 +110,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/24160.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "406mm三連装砲T3": {
@@ -118,7 +118,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/24200.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "381mm連装砲改T0": {
@@ -126,7 +126,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/24300.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "試作型410mm連装砲mod.A": {
@@ -134,7 +134,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/34320.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試製410mm三連装砲T0: {
@@ -142,7 +142,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/34180.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "410mm連装砲(三式弾)T0": {
@@ -150,7 +150,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/34100.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "380mmSKC連装砲T3": {
@@ -158,7 +158,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/44100.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型406mmSKC連装砲T0: {
@@ -166,7 +166,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/44200.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型305mmSKC39三連装砲T0: {
@@ -174,7 +174,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/44300.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型380mmSKC三連装砲T0: {
@@ -182,7 +182,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/44500.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "380mm四連装砲Mle1935T3": {
@@ -190,7 +190,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/50400.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型380mm三連装砲Mle1935T0: {
@@ -198,7 +198,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/50480.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "試作型406mm/50三連装砲T0": {
@@ -206,7 +206,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/51000.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "381mm三連装砲Model1934T3": {
@@ -214,7 +214,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/55000.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   試作型三連装406mm主砲Model1940T0: {
@@ -222,7 +222,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/55900.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   "406mm三連装砲B-37 MK-1T3": {
@@ -230,7 +230,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/large/85300.png",
-    type: "large",
+    type: 3,
     rarity: "SSR",
   },
   /*fight---------------------------------------------------------*/
@@ -239,7 +239,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17060.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "F4U(VF-17中隊)T0": {
@@ -247,7 +247,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17260.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "試作型XF5U「フライングパンケーキ」": {
@@ -255,7 +255,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17420.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   F6FヘルキャットT3: {
@@ -263,7 +263,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17300.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "F6Fヘルキャット(HVAR搭載型)": {
@@ -271,7 +271,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17440.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   F7FタイガーキャットT0: {
@@ -279,7 +279,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17360.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   F8FベアキャットT0: {
@@ -287,7 +287,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/17380.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "シーファイアFR.47T0": {
@@ -295,7 +295,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/27060.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   シーファングT3: {
@@ -303,7 +303,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/27100.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   シーフューリーT0: {
@@ -311,7 +311,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/27300.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   シーホーネットT0: {
@@ -319,7 +319,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/27320.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   零戦五二型T3: {
@@ -327,7 +327,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/37200.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   烈風T3: {
@@ -335,7 +335,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/37300.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   紫電改二T0: {
@@ -343,7 +343,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/37400.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   試作型紫電改四T0: {
@@ -351,7 +351,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/37460.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "Me-155A艦上戦闘機T3": {
@@ -359,7 +359,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/47100.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "試作型BF-109G(特別計画艦仕様)T0": {
@@ -367,7 +367,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/47160.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   "試作型FW-190 A-6/R6(艦載機型)": {
@@ -375,7 +375,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/fight/47180.png",
-    type: "fight",
+    type: 6,
     rarity: "SSR",
   },
   /*bomb---------------------------------------------------------*/
@@ -384,7 +384,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/19060.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   "実験型XSB3C-1T0": {
@@ -392,7 +392,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/19160.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   "BTD-1デストロイヤーT3": {
@@ -400,7 +400,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/19200.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   "バラクーダ(831中隊)T0": {
@@ -408,7 +408,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/29300.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   ファイアフライT0: {
@@ -416,7 +416,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/29200.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   "ファイアフライ(1771中隊)T0": {
@@ -424,7 +424,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/29220.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   彗星T3: {
@@ -432,7 +432,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/39100.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   彗星一二型甲T0: {
@@ -440,7 +440,7 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/39160.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
   "試作型艦上式Su-2": {
@@ -448,120 +448,120 @@ export const weaponlist = {
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
     icon: "equips/bomb/85540.png",
-    type: "bomb",
+    type: 7,
     rarity: "SSR",
   },
-  /*torpedo---------------------------------------------------------*/
+  /*attack---------------------------------------------------------*/
   "TBDデバステイター(VT-8中隊)T0": {
     text: "TBDデバステイター(VT-8中隊)T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/18060.png",
-    type: "torpedo",
+    icon: "equips/attack/18060.png",
+    type: 8,
     rarity: "SSR",
   },
   "TBFアベンジャー(VT-8中隊)T0": {
     text: "TBFアベンジャー(VT-8中隊)T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/18060.png",
-    type: "torpedo",
+    icon: "equips/attack/18060.png",
+    type: 8,
     rarity: "SSR",
   },
   "TBMアベンジャー(VT-18中隊)T0": {
     text: "TBMアベンジャー(VT-18中隊)T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/18180.png",
-    type: "torpedo",
+    icon: "equips/attack/18180.png",
+    type: 8,
     rarity: "SSR",
   },
   "XTB2D-1スカイパイレートT0": {
     text: "XTB2D-1スカイパイレートT0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/18220.png",
-    type: "torpedo",
+    icon: "equips/attack/18220.png",
+    type: 8,
     rarity: "SSR",
   },
   "ソードフィッシュ(818中隊)T0": {
     text: "ソードフィッシュ(818中隊)T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/28060.png",
-    type: "torpedo",
+    icon: "equips/attack/28060.png",
+    type: 8,
     rarity: "SSR",
   },
   バラクーダT3: {
     text: "バラクーダT3",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/28100.png",
-    type: "torpedo",
+    icon: "equips/attack/28100.png",
+    type: 8,
     rarity: "SSR",
   },
   ファイアブランドT0: {
     text: "ファイアブランドT0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/28200.png",
-    type: "torpedo",
+    icon: "equips/attack/28200.png",
+    type: 8,
     rarity: "SSR",
   },
   ファイアクレストT0: {
     text: "ファイアクレストT0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/28220.png",
-    type: "torpedo",
+    icon: "equips/attack/28220.png",
+    type: 8,
     rarity: "SSR",
   },
   流星T3: {
     text: "流星T3",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/38200.png",
-    type: "torpedo",
+    icon: "equips/attack/38200.png",
+    type: 8,
     rarity: "SSR",
   },
   "試作型彩雲(艦攻型・特別計画艦仕様)T0": {
     text: "試作型彩雲(艦攻型・特別計画艦仕様)T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/38300.png",
-    type: "torpedo",
+    icon: "equips/attack/38300.png",
+    type: 8,
     rarity: "SSR",
   },
   "Ju-87 D-4T0": {
     text: "Ju-87 D-4T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/48040.png",
-    type: "torpedo",
+    icon: "equips/attack/48040.png",
+    type: 8,
     rarity: "SSR",
   },
   "ブレゲー BR.810攻撃機T0": {
     text: "ブレゲー BR.810攻撃機T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/51240.png",
-    type: "torpedo",
+    icon: "equips/attack/51240.png",
+    type: 8,
     rarity: "SSR",
   },
   "試作型VIT-2(VK107)T0": {
     text: "試作型VIT-2(VK107)T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/85560.png",
-    type: "torpedo",
+    icon: "equips/attack/85560.png",
+    type: 8,
     rarity: "SSR",
   },
   "試作型VIT-2（モードチェンジ）T0": {
     text: "試作型VIT-2（モードチェンジ）T0",
     bg: "ui/bg4.png",
     fr: "ui/frame_4.png",
-    icon: "equips/torpedo/85620.png",
-    type: "torpedo",
+    icon: "equips/attack/85620.png",
+    type: 8,
     rarity: "SSR",
   },
 };
