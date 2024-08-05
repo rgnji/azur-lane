@@ -104,7 +104,7 @@ fleet_container.component("ship-container", {
               <item-container
               :col-id="idCompose(0)"></item-container>
               <item-container
-              v-for="index in 3"
+              v-for="index in 5"
               :key="index"
               :col-id="idCompose(index)"></item-container>
               <word-container
