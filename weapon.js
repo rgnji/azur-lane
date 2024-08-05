@@ -7,6 +7,7 @@ export const weaponlist = {
     fr: "",
     icon: "ui/icon_back.png",
   },
+  /*UR---------------------------------------------------------*/
   "406mm三連装砲MK7T0": {
     text: "406mm三連装砲MK7T0",
     bg: "ui/bg5.png",
@@ -31,6 +32,47 @@ export const weaponlist = {
     type: "large",
     rarity: "UR",
   },
+  "試作型艦上式La-9T0": {
+    text: "試作型艦上式La-9T0",
+    bg: "ui/bg5.png",
+    fr: "ui/frame_5.png",
+    icon: "equips/fight/85600.png",
+    type: "fight",
+    rarity: "UR",
+  },
+  "AD-1スカイレーダー": {
+    text: "AD-1スカイレーダー",
+    bg: "ui/bg5.png",
+    fr: "ui/frame_5.png",
+    icon: "equips/bomb/19300.png",
+    type: "bomb",
+    rarity: "UR",
+  },
+  "試作型天雷(特別計画艦仕様)T0": {
+    text: "試作型天雷(特別計画艦仕様)T0",
+    bg: "ui/bg5.png",
+    fr: "ui/frame_5.png",
+    icon: "equips/bomb/39340.png",
+    type: "bomb",
+    rarity: "UR",
+  },
+  ワイヴァーンT0: {
+    text: "ワイヴァーンT0",
+    bg: "ui/bg5.png",
+    fr: "ui/frame_5.png",
+    icon: "equips/torpedo/28400.png",
+    type: "torpedo",
+    rarity: "UR",
+  },
+  試作型スピアフィッシュ: {
+    text: "試作型スピアフィッシュ",
+    bg: "ui/bg5.png",
+    fr: "ui/frame_5.png",
+    icon: "equips/torpedo/28420.png",
+    type: "torpedo",
+    rarity: "UR",
+  },
+  /*SSR---------------------------------------------------------*/
   試作型406mm三連装砲MkDT0: {
     text: "試作型406mm三連装砲MkDT0",
     bg: "ui/bg4.png",
@@ -192,14 +234,6 @@ export const weaponlist = {
     rarity: "SSR",
   },
   /*fight---------------------------------------------------------*/
-  "試作型艦上式La-9T0": {
-    text: "試作型艦上式La-9T0",
-    bg: "ui/bg5.png",
-    fr: "ui/frame_5.png",
-    icon: "equips/fight/85600.png",
-    type: "fight",
-    rarity: "UR",
-  },
   "F2Aバッファロー(サッチ隊)T0": {
     text: "F2Aバッファロー(サッチ隊)T0",
     bg: "ui/bg4.png",
@@ -345,22 +379,6 @@ export const weaponlist = {
     rarity: "SSR",
   },
   /*bomb---------------------------------------------------------*/
-  "AD-1スカイレーダー": {
-    text: "AD-1スカイレーダー",
-    bg: "ui/bg5.png",
-    fr: "ui/frame_5.png",
-    icon: "equips/bomb/19300.png",
-    type: "bomb",
-    rarity: "UR",
-  },
-  "試作型天雷(特別計画艦仕様)T0": {
-    text: "試作型天雷(特別計画艦仕様)T0",
-    bg: "ui/bg5.png",
-    fr: "ui/frame_5.png",
-    icon: "equips/bomb/39340.png",
-    type: "bomb",
-    rarity: "UR",
-  },
   "SBD(マクラスキー隊)T0": {
     text: "SBD(マクラスキー隊)T0",
     bg: "ui/bg4.png",
@@ -434,22 +452,6 @@ export const weaponlist = {
     rarity: "SSR",
   },
   /*torpedo---------------------------------------------------------*/
-  ワイヴァーンT0: {
-    text: "ワイヴァーンT0",
-    bg: "ui/bg5.png",
-    fr: "ui/frame_5.png",
-    icon: "equips/torpedo/28400.png",
-    type: "torpedo",
-    rarity: "UR",
-  },
-  試作型スピアフィッシュ: {
-    text: "試作型スピアフィッシュ",
-    bg: "ui/bg5.png",
-    fr: "ui/frame_5.png",
-    icon: "equips/torpedo/28420.png",
-    type: "torpedo",
-    rarity: "UR",
-  },
   "TBDデバステイター(VT-8中隊)T0": {
     text: "TBDデバステイター(VT-8中隊)T0",
     bg: "ui/bg4.png",
