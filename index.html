@@ -109,9 +109,20 @@
       }
       .item_container:hover {
         transform: scale(1.2);
+        transform-origin: 50% 100%;
         background-color: black;
         box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
         z-index: 13;
+      }
+      .tooltip-inner {
+        background-color: rgb(0, 0, 0);
+        border-color: white;
+        border-width: 2px;
+        border-style: solid;
+        box-shadow: 0px 0px 10px 10px rgba(53, 83, 190, 0.8);
+      }
+      .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+        opacity: 0;
       }
     </style>
   </head>

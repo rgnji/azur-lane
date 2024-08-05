@@ -170,6 +170,8 @@ select_ship.component("ship-select", {
               data-bs-dismiss="modal"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
+              data-bs-offset="0,5"
+              data-bs-delay="0.1"
               :title="shipId"
               @click="choose()">
                 <img class="bg" :src="shipBg" />
@@ -204,6 +206,8 @@ select_weapon.component("weapon-select", {
               data-bs-dismiss="modal"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
+              data-bs-offset="0,5"
+              data-bs-delay="0.1"
               :title="weaponId"
               @click="choose()">
                 <img class="bg" :src="weaponBg" />
