@@ -7,12 +7,13 @@ export const shiplist = {
     fr: "",
     icon: "ui/empty.png",
   },
+  /*---------------------------------------------------------*/
   キアサージ: {
     text: "キアサージ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/199040.png",
-    type: "6",
+    type: "9",
     rarity: "UR",
     equip: {
       main: ["large"],
@@ -28,8 +29,8 @@ export const shiplist = {
     type: "6",
     rarity: "UR",
   },
-  ソユーズ: {
-    text: "ソユーズ",
+  ソビエツキーソユーズ: {
+    text: "ソビエツキーソユーズ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/705020.png",
@@ -44,8 +45,8 @@ export const shiplist = {
     type: "6",
     rarity: "UR",
   },
-  グローセ: {
-    text: "グローセ",
+  フリドリヒデアグローセ: {
+    text: "フリドリヒデアグローセ",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/feiteliedadi.png",
@@ -60,8 +61,8 @@ export const shiplist = {
     type: "6",
     rarity: "UR",
   },
-  フッテン: {
-    text: "フッテン",
+  ウルリッヒフォンフッテン: {
+    text: "ウルリッヒフォンフッテン",
     bg: "ui/bg5.png",
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/wuerlixi.png",
@@ -82,6 +83,55 @@ export const shiplist = {
     fr: "ui/frame_5.png",
     icon: "ship_senkan/UR/xinzexi.png",
     type: "6",
+    rarity: "UR",
+  },
+  ウォースパイト改: {
+    text: ウォースパイト改,
+    bg: "ui/bg5.png",
+    fr: "ui/bg5.png",
+    icon: "ship_senken/UR/yanzhan_g.png",
+    type: "6",
+    rarity: "UR",
+  },
+  /*---------------------------------------------------------*/
+  信濃: {
+    text: 信濃,
+    bg: "ui/bg5.png",
+    fr: "ui/bg5.png",
+    icon: "ship_kuubo/UR/xinnong.png",
+    type: "8",
+    rarity: "UR",
+  },
+  白龍: {
+    text: 白龍,
+    bg: "ui/bg5.png",
+    fr: "ui/bg5.png",
+    icon: "ship_kuubo/UR/bailong.png",
+    type: "8",
+    rarity: "UR",
+  },
+  インプラカブル: {
+    text: インプラカブル,
+    bg: "ui/bg5.png",
+    fr: "ui/bg5.png",
+    icon: "ship_kuubo/UR/yuanchou.png",
+    type: "8",
+    rarity: "UR",
+  },
+  ヨークタウンⅡ: {
+    text: ヨークタウンⅡ,
+    bg: "ui/bg5.png",
+    fr: "ui/bg5.png",
+    icon: "ship_kuubo/UR/yuekechengii.png",
+    type: "8",
+    rarity: "UR",
+  },
+  アドミラルナヒーモフ: {
+    text: アドミラルナヒーモフ,
+    bg: "ui/bg5.png",
+    fr: "ui/bg5.png",
+    icon: "ship_kuubo/UR/799020.png",
+    type: "8",
     rarity: "UR",
   },
 };
