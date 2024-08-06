@@ -178,12 +178,9 @@
             <div class="container-fluid">
               <div class="row justify-content-center m-auto" id="weapon_select">
                 <weapon-select
-                  v-for="(weapon, key) in weaponlist"
-                  :weapon-id="weapon.text"
-                  :weapon-bg="weapon.bg"
-                  :weapon-frame="weapon.fr"
-                  :weapon-icon="weapon.icon"
-                  :key="key"></weapon-select>
+                  v-for="(weapon, index) in targetName"
+                  :weapon-name="weapon"
+                  :key="index"></weapon-select>
               </div>
             </div>
           </div>
@@ -197,14 +194,5 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@latest"></script>
-
-    <script type="module">
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]'
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-      );
-    </script>
   </body>
 </html>

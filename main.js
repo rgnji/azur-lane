@@ -63,6 +63,68 @@ fleet_container.component("item-container", {
       } else {
         // it's a weapon
         store.takePosWeapon(this.row, this.col);
+
+        // determine weapon modal content
+        let ship = store.getter(this.row);
+        switch (this.col) {
+          case 1:
+            const type_1 = shiplist[ship].equip.equip_1; // array
+            store.weaponModalPush("remove");
+            // iterate the whole weapon list
+            for (let key in weaponlist) {
+              // if the weapon type matches, store the name (key) in reactive
+              if (type_1.includes(weaponlist[key].type)) {
+                store.weaponModalPush(key);
+              }
+            }
+            break;
+          case 2:
+            const type_2 = shiplist[ship].equip.equip_2; // array
+            store.weaponModalPush("remove");
+            // iterate the whole weapon list
+            for (let key in weaponlist) {
+              // if the weapon type matches, store the name (key) in reactive
+              if (type_2.includes(weaponlist[key].type)) {
+                store.weaponModalPush(key);
+              }
+            }
+            break;
+          case 3:
+            const type_3 = shiplist[ship].equip.equip_3; // array
+            store.weaponModalPush("remove");
+            // iterate the whole weapon list
+            for (let key in weaponlist) {
+              // if the weapon type matches, store the name (key) in reactive
+              if (type_3.includes(weaponlist[key].type)) {
+                store.weaponModalPush(key);
+              }
+            }
+            break;
+          case 4:
+            const type_4 = shiplist[ship].equip.equip_4; // array
+            store.weaponModalPush("remove");
+            // iterate the whole weapon list
+            for (let key in weaponlist) {
+              // if the weapon type matches, store the name (key) in reactive
+              if (type_4.includes(weaponlist[key].type)) {
+                store.weaponModalPush(key);
+              }
+            }
+            break;
+          case 5:
+            const type_5 = shiplist[ship].equip.equip_5; // array
+            store.weaponModalPush("remove");
+            // iterate the whole weapon list
+            for (let key in weaponlist) {
+              // if the weapon type matches, store the name (key) in reactive
+              if (type_5.includes(weaponlist[key].type)) {
+                store.weaponModalPush(key);
+              }
+            }
+            break;
+          default:
+            break;
+        }
       }
     },
     deterModal() {
@@ -168,7 +230,7 @@ select_ship.component("ship-select", {
               class="item_container d-flex align-content-center flex-wrap" 
               :id="shipId"
               data-bs-dismiss="modal"
-              data-bs-toggle="tooltip"
+              v-tooltip
               data-bs-placement="bottom"
               data-bs-offset="0,5"
               data-bs-delay="0.1"
@@ -186,25 +248,31 @@ select_ship.component("ship-select", {
   },
 });
 
+select_ship.directive("tooltip", {
+  mounted(el) {
+    const tooltip = new bootstrap.Tooltip(el);
+  },
+});
+
 select_ship.mount("#ship_select");
 /*------------------------------------------------*/
 const select_weapon = Vue.createApp({
   data() {
     return {
-      weaponlist: weaponlist,
+      targetName: store.weaponModalGetter(),
     };
   },
 });
 
 select_weapon.component("weapon-select", {
-  props: ["weaponBg", "weaponFrame", "weaponIcon", "weaponId"],
+  props: ["weaponName"],
   template: `
             <div class="col-md-auto p-0 m-1">
               <button 
               class="item_container d-flex align-content-center flex-wrap" 
               :id="weaponId"
               data-bs-dismiss="modal"
-              data-bs-toggle="tooltip"
+              v-tooltip
               data-bs-placement="bottom"
               data-bs-offset="0,5"
               data-bs-delay="0.1"
@@ -215,10 +283,25 @@ select_weapon.component("weapon-select", {
                 <img class="icon" :src="weaponIcon" />
               </button>
             </div>`,
+  data() {
+    return {
+      weaponBg: weaponlist[this.weaponName].bg,
+      weaponFrame: weaponlist[this.weaponName].fr,
+      weaponIcon: weaponlist[this.weaponName].icon,
+      weaponId: weaponlist[this.weaponName].text,
+    };
+  },
   methods: {
     choose() {
       store.selectWeapon(this.weaponId);
+      store.weaponModalReset();
     },
+  },
+});
+
+select_weapon.directive("tooltip", {
+  mounted(el) {
+    const tooltip = new bootstrap.Tooltip(el);
   },
 });
 

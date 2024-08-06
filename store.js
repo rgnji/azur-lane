@@ -7,7 +7,9 @@ export const store = Vue.reactive({
     ["remove", "remove", "remove"],
     ["remove", "remove", "remove"],
   ],
+  modalWeaponContent: [],
 
+  /*-------------------------------------------------------*/
   takePos(index) {
     // index = row
     this.shipPos = index;
@@ -27,6 +29,7 @@ export const store = Vue.reactive({
     this.targetWeapon[row][col] = weapon;
   },
 
+  /*-------------------------------------------------------*/
   // remove weapon when ship removed
   resetWeapon(row, col) {
     this.targetWeapon[row][col - 1] = "remove";
@@ -48,6 +51,7 @@ export const store = Vue.reactive({
     }
   },
 
+  /*-------------------------------------------------------*/
   getter(row) {
     // return ship name
     return this.targetShip[row];
@@ -55,5 +59,17 @@ export const store = Vue.reactive({
   getterWeapon(row, col) {
     // return weapon name
     return this.targetWeapon[row][col - 1];
+  },
+
+  /*-------------------------------------------------------*/
+  weaponModalPush(weapon_name) {
+    this.modalWeaponContent.push(weapon_name);
+    //console.log(weapon_name);
+  },
+  weaponModalReset() {
+    this.modalWeaponContent.splice(0, this.modalWeaponContent.length);
+  },
+  weaponModalGetter() {
+    return this.modalWeaponContent;
   },
 });
