@@ -16,6 +16,7 @@ export const shiplist = {
     type: 9,
     rarity: "UR",
     equip: [[3], [6], [5], [9], [9]],
+    reload: 155,
   },
   アルザス: {
     text: "アルザス",
@@ -43,6 +44,7 @@ export const shiplist = {
     type: 6,
     rarity: "UR",
     equip: [[3], [1, 2], [5], [9], [9]],
+    reload: 170,
   },
   フリドリヒデアグローセ: {
     text: "フリドリヒデアグローセ",

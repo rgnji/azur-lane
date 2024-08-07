@@ -163,7 +163,8 @@ fleet_container.component("fleet-container", {
 });
 
 fleet_container.mount("#fleet-board");
-/*------------------------------------------------*/
+
+/*ship modal------------------------------------------------*/
 const select_ship = Vue.createApp({
   data() {
     return {
@@ -203,9 +204,9 @@ select_ship.directive("tooltip", {
     const tooltip = new bootstrap.Tooltip(el);
   },
 });
-
 select_ship.mount("#ship_select");
-/*------------------------------------------------*/
+
+/*weapon modal------------------------------------------------*/
 const modal_weapon = document.getElementById("weapon_modal");
 
 modal_weapon.addEventListener("hide.bs.modal", () => {
@@ -232,7 +233,7 @@ select_weapon.component("weapon-select", {
               data-bs-placement="bottom"
               data-bs-offset="0,5"
               data-bs-delay="0.1"
-              :title="weaponId"
+              :title="weaponId" 
               @click="choose()">
                 <img class="bg" :src="weaponBg" />
                 <img class="fr" :src="weaponFrame" />
@@ -250,7 +251,6 @@ select_weapon.component("weapon-select", {
   methods: {
     choose() {
       store.selectWeapon(this.weaponId);
-      store.weaponModalReset();
     },
   },
 });
