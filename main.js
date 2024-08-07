@@ -65,14 +65,14 @@ fleet_container.component("item-container", {
         store.takePosWeapon(this.row, this.col);
 
         // determine weapon modal content
-        store.weaponModalPush("remove");
-        let row, col;
-        [row, col] = store.weaponPosGetter(); // col is 0-based
-        const ship = store.getter(row);
-        const ship_type = shiplist[ship].equip[col];
-        for (let key in weaponlist) {
-          if (ship_type.includes(weaponlist[key].type)) {
-            store.weaponModalPush(key);
+        const ship = store.getter(this.row);
+        if (ship !== "remove") {
+          store.weaponModalPush("remove");
+          const ship_type = shiplist[ship].equip[this.col - 1];
+          for (let key in weaponlist) {
+            if (ship_type.includes(weaponlist[key].type)) {
+              store.weaponModalPush(key);
+            }
           }
         }
       }
