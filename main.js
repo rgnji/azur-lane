@@ -65,75 +65,25 @@ fleet_container.component("item-container", {
         store.takePosWeapon(this.row, this.col);
 
         // determine weapon modal content
-        let ship = store.getter(this.row);
-        switch (this.col) {
-          case 1:
-            const type_1 = shiplist[ship].equip.equip_1; // array
-            store.weaponModalPush("remove");
-            // iterate the whole weapon list
-            for (let key in weaponlist) {
-              // if the weapon type matches, store the name (key) in reactive
-              if (type_1.includes(weaponlist[key].type)) {
-                store.weaponModalPush(key);
-              }
-            }
-            break;
-          case 2:
-            const type_2 = shiplist[ship].equip.equip_2; // array
-            store.weaponModalPush("remove");
-            // iterate the whole weapon list
-            for (let key in weaponlist) {
-              // if the weapon type matches, store the name (key) in reactive
-              if (type_2.includes(weaponlist[key].type)) {
-                store.weaponModalPush(key);
-              }
-            }
-            break;
-          case 3:
-            const type_3 = shiplist[ship].equip.equip_3; // array
-            store.weaponModalPush("remove");
-            // iterate the whole weapon list
-            for (let key in weaponlist) {
-              // if the weapon type matches, store the name (key) in reactive
-              if (type_3.includes(weaponlist[key].type)) {
-                store.weaponModalPush(key);
-              }
-            }
-            break;
-          case 4:
-            const type_4 = shiplist[ship].equip.equip_4; // array
-            store.weaponModalPush("remove");
-            // iterate the whole weapon list
-            for (let key in weaponlist) {
-              // if the weapon type matches, store the name (key) in reactive
-              if (type_4.includes(weaponlist[key].type)) {
-                store.weaponModalPush(key);
-              }
-            }
-            break;
-          case 5:
-            const type_5 = shiplist[ship].equip.equip_5; // array
-            store.weaponModalPush("remove");
-            // iterate the whole weapon list
-            for (let key in weaponlist) {
-              // if the weapon type matches, store the name (key) in reactive
-              if (type_5.includes(weaponlist[key].type)) {
-                store.weaponModalPush(key);
-              }
-            }
-            break;
-          default:
-            break;
+        store.weaponModalPush("remove");
+        let row, col;
+        [row, col] = store.weaponPosGetter(); // col is 0-based
+        const ship = store.getter(row);
+        const ship_type = shiplist[ship].equip[col];
+        for (let key in weaponlist) {
+          if (ship_type.includes(weaponlist[key].type)) {
+            store.weaponModalPush(key);
+          }
         }
       }
     },
     deterModal() {
       if (this.col === 0) {
         // ship
-        return "#shipselect";
+        return "#ship_modal";
       } else {
         // weapon
-        return "#weaponselect";
+        return "#weapon_modal";
       }
     },
     weaponOnOff() {
@@ -256,6 +206,12 @@ select_ship.directive("tooltip", {
 
 select_ship.mount("#ship_select");
 /*------------------------------------------------*/
+const modal_weapon = document.getElementById("weapon_modal");
+
+modal_weapon.addEventListener("hide.bs.modal", () => {
+  store.weaponModalReset();
+});
+
 const select_weapon = Vue.createApp({
   data() {
     return {

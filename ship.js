@@ -6,6 +6,7 @@ export const shiplist = {
     bg: "",
     fr: "",
     icon: "ui/empty.png",
+    equip: [[0], [0], [0], [0], [0]],
   },
   /*---------------------------------------------------------*/
   キアサージ: {
@@ -15,13 +16,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/199040.png",
     type: 9,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [6],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [6], [5], [9], [9]],
   },
   アルザス: {
     text: "アルザス",
@@ -166,13 +161,7 @@ export const shiplist = {
     icon: "ship_kuubo/UR/xinnong.png",
     type: 8,
     rarity: "UR",
-    equip: {
-      equip_1: [6, 7, 8],
-      equip_2: [7],
-      equip_3: [8],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[6, 7, 8], [7], [8], [9], [9]],
   },
   白龍: {
     text: "白龍",

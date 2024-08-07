@@ -72,4 +72,9 @@ export const store = Vue.reactive({
   weaponModalGetter() {
     return this.modalWeaponContent;
   },
+
+  /*-------------------------------------------------------*/
+  weaponPosGetter() {
+    return this.weaponPos;
+  },
 });
