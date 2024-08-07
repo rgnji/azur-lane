@@ -6,7 +6,6 @@ export const shiplist = {
     bg: "",
     fr: "",
     icon: "ui/empty.png",
-    equip: [[0], [0], [0], [0], [0]],
   },
   /*---------------------------------------------------------*/
   キアサージ: {
@@ -25,13 +24,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/805030.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   ソビエツキーソユーズ: {
     text: "ソビエツキーソユーズ",
@@ -40,13 +33,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/705020.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   ビスマルクZwei: {
     text: "ビスマルクZwei",
@@ -55,13 +42,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/bisimaiz.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   フリドリヒデアグローセ: {
     text: "フリドリヒデアグローセ",
@@ -70,13 +51,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/feiteliedadi.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   ヴァンガード: {
     text: "ヴァンガード",
@@ -85,13 +60,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/qianwei.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   ウルリッヒフォンフッテン: {
     text: "ウルリッヒフォンフッテン",
@@ -100,13 +69,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/wuerlixi.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   武蔵: {
     text: "武蔵",
@@ -115,13 +78,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/wuzang.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   ニュージャージ: {
     text: "ニュージャージ",
@@ -130,13 +87,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/xinzexi.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   ウォースパイト改: {
     text: "ウォースパイト改",
@@ -145,13 +96,7 @@ export const shiplist = {
     icon: "ship_senkan/UR/yanzhan_g.png",
     type: 6,
     rarity: "UR",
-    equip: {
-      equip_1: [3],
-      equip_2: [1, 2],
-      equip_3: [5],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[3], [1, 2], [5], [9], [9]],
   },
   /*---------------------------------------------------------*/
   信濃: {
@@ -170,13 +115,7 @@ export const shiplist = {
     icon: "ship_kuubo/UR/bailong.png",
     type: 8,
     rarity: "UR",
-    equip: {
-      equip_1: [6, 8],
-      equip_2: [7],
-      equip_3: [7, 8],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[6, 8], [7], [7, 8], [9], [9]],
   },
   インプラカブル: {
     text: "インプラカブル",
@@ -185,13 +124,7 @@ export const shiplist = {
     icon: "ship_kuubo/UR/yuanchou.png",
     type: 8,
     rarity: "UR",
-    equip: {
-      equip_1: [6],
-      equip_2: [6, 7, 8],
-      equip_3: [8],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[6], [6, 7, 8], [8], [9], [9]],
   },
   ヨークタウンⅡ: {
     text: "ヨークタウンⅡ",
@@ -200,13 +133,7 @@ export const shiplist = {
     icon: "ship_kuubo/UR/yuekechengii.png",
     type: 8,
     rarity: "UR",
-    equip: {
-      equip_1: [6],
-      equip_2: [7],
-      equip_3: [6, 7, 8],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[6], [7], [6, 7, 8], [9], [9]],
   },
   アドミラルナヒーモフ: {
     text: "アドミラルナヒーモフ",
@@ -215,12 +142,6 @@ export const shiplist = {
     icon: "ship_kuubo/UR/799020.png",
     type: 8,
     rarity: "UR",
-    equip: {
-      equip_1: [6],
-      equip_2: [6, 7, 8],
-      equip_3: [8],
-      equip_4: [9],
-      equip_5: [9],
-    },
+    equip: [[6], [6, 7, 8], [8], [9], [9]],
   },
 };
